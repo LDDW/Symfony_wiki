@@ -1,0 +1,16 @@
+@mixin red-button($padding){
+    display: block;
+    text-align: center;
+    min-width: 100px;
+    padding: $padding;
+    font-size: 15px;
+    font-family: sans-serif;
+    border-radius: 30px;
+    background: $red;
+    color: #212121;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background: #f42d5b;
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "symfony_wiki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./public/assets/sass/style.scss:./public/assets/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LDDW/Symfony_wiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LDDW/Symfony_wiki/issues"
+  },
+  "homepage": "https://github.com/LDDW/Symfony_wiki#readme",
+  "dependencies": {
+    "sass": "^1.56.0"
+  }
+}
