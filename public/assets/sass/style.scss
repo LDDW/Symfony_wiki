@@ -1,0 +1,135 @@
+// ======================================== IMPORTS ======================================== //
+@import '_mixins';
+@import '_placeholders';
+
+// ======================================== VARIABLES ======================================== //
+$white: #FEFEFD;
+$red: #D41F4A;
+$blue: #05305B;
+
+// ======================================== GÉNÉRAL ======================================== //
+*,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    background: $white;
+}
+
+button {
+    border: 0;
+    background: $red;
+    color: $white;
+}
+
+// ======================================== NAVBAR ======================================== //
+nav {
+    width: 100%;
+    height: 120px;
+    padding: 0 50px;
+    @extend %flex-between;
+    background: $blue;
+    img {
+        width: 70px
+    }
+
+    ul {
+        @extend %flex;
+        li {
+            list-style-type: none;
+            margin: 0 20px;
+            a {
+                text-decoration: none;
+                @include red-button(15px 20px)
+            }
+        }
+    }
+
+    button {
+        @include red-button(15px 20px)
+    }
+
+}
+
+// ======================================== HEADER ======================================== //
+header {
+    width: 80%;
+    height: 100px;
+    margin: 30px auto;
+    background: $blue;
+    border-radius: 15px;
+    @extend %flex-center;
+    h1 {
+        text-transform: uppercase;
+        color: $red;
+    }
+}
+
+// ======================================== MAIN ======================================== //
+main {
+    min-height: calc(100vh - 120px*2);
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 10px));;
+        gap: 20px;
+        .grid_item {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+            h2 {
+                width: 100%;
+                height: 100%;
+                padding: 40px;
+                @extend %flex-center;
+                text-transform: uppercase;
+                font-size: 30px;
+                backdrop-filter: blur(5px);
+                background-color: rgba($color: #000000, $alpha: 0.2);
+                color: $white;
+            }
+            img {
+                z-index: -10;
+                width: 130%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.3s ease-in-out;
+                
+            }
+            &:hover img {
+                width: 125%;
+            }
+        }
+    }
+}
+
+// ======================================== SECTION ======================================== //
+section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+// ======================================== FOOTER ======================================== //
+footer {
+    width: 100%;
+    height: 120px;
+    @extend %flex-center;
+    background: $blue;
+    p {
+        margin: 0 20px;
+        color: $white;
+    }
+}

@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+        {% block head %}
+            <meta charset="UTF-8">
+            <title>{% block title %}{% endblock %}</title>
+            <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+            {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            {# =============== CSS =============== #}
+            {% block stylesheets %}
+                <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+            {% endblock %}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        {# =============== BARRE DE NAVIGATION =============== #}
+        <nav>
+            <a href="">
+                <img src="{{ asset('assets/images/wiki.webp') }}" alt="">
+            </a>
+            <ul>
+                <li><a href="{{path('app_accueil')}}">Accueil</a></li>
+                <li><a href="">Catégories</a></li>
+                <li><a href="">Privé</a></li>
+            </ul>
+            <button>Connexion</button>
+        </nav>
+
+        {# =============== BANNIÈRE =============== #}
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+
+        {# =============== MAIN =============== #}
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        {# =============== FOOTER =============== #}
+        <footer>    
+            <p>Benjamin Drouin</p>
+            <p>Jules Boismon</p>
+            <p>Cyril Bizouarn</p>
+        </footer>
+
+        {# =============== JS =============== #}
+        {% block javascripts %}
+            
+        {% endblock %}
+
     </body>
 </html>
