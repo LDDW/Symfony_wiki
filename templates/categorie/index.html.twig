@@ -9,12 +9,29 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/Symfony_wiki/src/Controller/CategorieController.php'|file_link(0) }}">src/Controller/CategorieController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/Symfony_wiki/templates/categorie/index.html.twig'|file_link(0) }}">templates/categorie/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Informations</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for article in articles %}
+    
+        <tr>
+            <th scope="row"></th>
+            <td>{{ article.id}}</td>
+            <td>{{ article.titre}}</td>
+            <td>{{ article.auteur}}</td>
+            <td> {{ article.informations}}</td>
+            <td>
+            </td>
+        </tr>
+    
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
