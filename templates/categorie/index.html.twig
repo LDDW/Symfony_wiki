@@ -9,6 +9,7 @@
 </style>
 
 <div class="example-wrapper">
+{# <img src="/assets/uploads/ponce.jpg "> #}
     <table class="table table-hover">
   <thead>
     <tr>
@@ -22,8 +23,7 @@
   {% for article in articles %}
     
         <tr>
-            <th scope="row"></th>
-            <td>{{ article.id}}</td>
+            <th scope="row"><img src="{{ article.image }}" width="100"></th>
             <td>{{ article.titre}}</td>
             <td>{{ article.auteur}}</td>
             <td> {{ article.informations}}</td>

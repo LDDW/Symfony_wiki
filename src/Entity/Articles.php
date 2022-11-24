@@ -17,6 +17,9 @@ class Articles
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $categorie = null;
 
     #[ORM\Column(length: 255)]
@@ -38,6 +41,18 @@ class Articles
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
