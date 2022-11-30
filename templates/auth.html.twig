@@ -15,38 +15,11 @@
     </head>
     <body>
 
-        {# =============== BARRE DE NAVIGATION =============== #}
-        <nav>
-            <a href="">
-                <img src="{{ asset('assets/images/wiki.webp') }}" alt="">
-            </a>
-            <ul>
-                <li><a href="{{path('app_accueil')}}">Accueil</a></li>
-                <li><a href="">Catégories</a></li>
-                <li><a href="">Privé</a></li>
-            </ul>
-
-
-            {% if is_granted('ROLE_USER') %}
-                <div>
-                    <a href=""><button>Mes articles</button></a>
-                    <a href="{{ path('app_logout') }}"><button>Déconnexion</button></a>
-                </div>
-            {% else %}
-                <div>
-                    <a href="{{ path('app_login') }}"><button>Connexion</button></a>
-                    <a href="{{ path('app_register') }}"><button>Inscription</button></a> 
-                </div>
-            {% endif %}
-        </nav>
-
-        {# =============== BANNIÈRE =============== #}
-        <header>
-            {% block header %}{% endblock %}
-        </header>
-
         {# =============== MAIN =============== #}
         <main>
+        <div>
+            <a href="{{ path('app_accueil') }}">Retour à l'accueil</a>
+        </div>
             {% block body %}{% endblock %}
         </main>
 
