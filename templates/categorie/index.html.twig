@@ -17,21 +17,23 @@
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
       <th scope="col">Informations</th>
+      <th scope="col">Articles</th>
     </tr>
   </thead>
   <tbody>
   {% for article in articles %}
-    
-        <tr>
-            <th scope="row"><img src="{{ article.image }}" width="100"></th>
-            <td>{{ article.titre}}</td>
-            <td>{{ article.auteur}}</td>
-            <td> {{ article.informations}}</td>
-            <td>
-            </td>
-        </tr>
-    
-    {% endfor %}
-  </tbody>
+    <tr>
+      <th scope="row"><a href='/article/'><img src="{{ asset(article.image) }}" width="100"></a> </th>
+      <td>{{ article.titre}}</td>
+      <td>{{ article.auteur}}</td>
+      <td> {{ article.informations}}</td> 
+      <td>
+            <a href="/article/{{ article.id }}">
+                <button type="button">Voir l'article</button>
+                </a>
+            </td>    
+  </tr>
+  {% endfor %}
+</tbody>
 </table>
 {% endblock %}
