@@ -1,2 +1,4 @@
 # Symfony_wiki
-# php -S localhost:8000 -t public
+# installer scoop
+# installer symfony-cli
+# symfony serve

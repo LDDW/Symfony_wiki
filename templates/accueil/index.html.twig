@@ -19,6 +19,17 @@
                 <img src="{{ asset('assets/images/car.jpg') }}" alt="">
             </a>
         </div>
+        <br>
+        <div class="grid">
+            <a class="grid_item" href='article/{{ article1.id }}'>
+                <img src="{{ asset(article1.image)}}" alt="" style=' width :200px'>
+                <h2>{{ article1.titre }}</h2>
+            </a>
+            <a class="grid_item" href='article/{{ article2.id }}'>
+                <img src="{{ asset(article2.image)}}" alt="" style=' width :200px'>
+                <h2>{{ article2.titre }}</h2>
+            </a>
+        </div>
     </section>
 
 {% endblock %}

@@ -19,7 +19,6 @@ class ArticleController extends AbstractController
                 "Aucun produit n'a été trouvé pour l'id" . $id
             );
         }
-
         return $this->render('article/index.html.twig', [
             'article' => $article,
         ]);

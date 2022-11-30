@@ -13,7 +13,7 @@
     <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">{{ nombre }} Article(s)</th>
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
       <th scope="col">Informations</th>
@@ -23,7 +23,7 @@
   <tbody>
   {% for article in articles %}
     <tr>
-      <th scope="row"><a href='/article/'><img src="{{ asset(article.image) }}" width="100"></a> </th>
+      <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a> </th>
       <td>{{ article.titre}}</td>
       <td>{{ article.auteur}}</td>
       <td> {{ article.informations}}</td> 
