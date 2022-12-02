@@ -18,7 +18,7 @@ class AccueilController extends AbstractController
         $article2 = $doctrine->getRepository(Articles::class)->findBy(['categorie' => 2]);
         return $this->render('accueil/index.html.twig', [
             'article1' => $article1[random_int(0, 3)],
-            'article2' => $article2[random_int(0, 3)]
+            'article2' => $article2[random_int(0, 3)],
         ]);
     }
 }
