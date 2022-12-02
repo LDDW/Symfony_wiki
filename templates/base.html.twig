@@ -25,7 +25,19 @@
                 <li><a href="/categorie/1">Iphones</a></li>
                 <li><a href="/categorie/2">Macs</a></li>
             </ul>
-            <button>Connexion</button>
+
+
+            {% if is_granted('ROLE_USER') %}
+                <div>
+                    <a href=""><button>Mes articles</button></a>
+                    <a href="{{ path('app_logout') }}"><button>Déconnexion</button></a>
+                </div>
+            {% else %}
+                <div>
+                    <a href="{{ path('app_login') }}"><button>Connexion</button></a>
+                    <a href="{{ path('app_register') }}"><button>Inscription</button></a> 
+                </div>
+            {% endif %}
         </nav>
 
         {# =============== BANNIÈRE =============== #}

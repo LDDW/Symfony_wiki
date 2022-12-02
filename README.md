@@ -1,4 +1,7 @@
 # Symfony_wiki
-# installer scoop
-# installer symfony-cli
-# symfony serve
+
+## authentification 
+https://www.youtube.com/watch?v=INfHFDIjgrw
+
+- créer une entity user 
+- migration user
