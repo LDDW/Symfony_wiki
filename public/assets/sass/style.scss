@@ -4,10 +4,10 @@
 
 // ======================================== VARIABLES ======================================== //
 $white: #FEFEFD;
-$red: #D41F4A;
 $blue: #05305B;
-
+$red: #D41F4A;
 // ======================================== GÉNÉRAL ======================================== //
+
 *,
  ::before,
  ::after {
@@ -21,13 +21,13 @@ $blue: #05305B;
 
 body {
     font-family: sans-serif;
-    background: $white;
 }
+    background: $white;
 
-button {
     border: 0;
-    background: $red;
+button {
     color: $white;
+    background: $red;
 }
 
 // ======================================== NAVBAR ======================================== //
@@ -50,19 +50,15 @@ nav {
             }
         }
     }
-
     li {
         list-style-type: none;
     }
-
     a {
         text-decoration: none;
     }
-
     button {
         @include red-button(15px 20px)
     }
-
     div {
         @extend %flex;
         button {
@@ -71,7 +67,6 @@ nav {
     }
 
 }
-
 // ======================================== HEADER ======================================== //
 header {
     width: 80%;
@@ -85,7 +80,6 @@ header {
         color: $red;
     }
 }
-
 // ======================================== MAIN ======================================== //
 main {
     min-height: 100vh;
@@ -146,3 +140,23 @@ footer {
         color: $white;
     }
 }
+
+// ======================================== PASTILLES ===================================== //
+.pastille {
+    padding: 7px;
+    border-radius: 17px/50%;
+    background-color: $red;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.displayPastille{
+    position: relative;
+    bottom: 50px;
+    text-align: right;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 25px;
+  }

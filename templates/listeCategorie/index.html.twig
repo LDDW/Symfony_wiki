@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Catégorie{% endblock %}
+
+{% block header %}
+    <h1>Liste des Catégorie</h1>
+{% endblock %}
+
+{% block body %}
+
+    <section>
+        <div class="grid">
+            <a class="grid_item">
+                <h2>Automobile</h2>
+                <img src="{{ asset('assets/images/car.jpg') }}" alt="">
+                <div class="displayPastille">
+                    <div class="pastille">1 Article</div>
+                </div>
+            </a>
+            
+            <a class="grid_item">
+                <h2>Automobile</h2>  
+                <img src="{{ asset('assets/images/car.jpg') }}" alt="">
+                <div class="displayPastille">
+                    <div class="pastille">2 Articles</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+{% endblock %}
