@@ -10,21 +10,15 @@
 
     <section>
         <div class="grid">
-            <a class="grid_item">
-                <h2>Automobile</h2>
-                <img src="{{ asset('assets/images/car.jpg') }}" alt="">
+            {% for categorie in categories %}
+            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
+                <h2>{{ categorie.nom }}</h2>
+                <img src="{{ asset(categorie.image) }}" alt="">
                 <div class="displayPastille">
-                    <div class="pastille">1 Article</div>
+                    <div class="pastille"> {{ categorie.articles|length }} {{ categorie.articles|length > 1 ? 'Articles' : 'Article' }}</div>
                 </div>
             </a>
-            
-            <a class="grid_item">
-                <h2>Automobile</h2>  
-                <img src="{{ asset('assets/images/car.jpg') }}" alt="">
-                <div class="displayPastille">
-                    <div class="pastille">2 Articles</div>
-                </div>
-            </a>
+            {% endfor %}
         </div>
     </section>
 

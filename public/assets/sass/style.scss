@@ -25,6 +25,7 @@ body {
 }
 
 button {
+    border: 0;
     color: $white;
     background: $red;
 }
@@ -115,6 +116,9 @@ main {
             &:hover img {
                 width: 125%;
             }
+        }
+        a { 
+            text-decoration: none 
         }
     }
 }
