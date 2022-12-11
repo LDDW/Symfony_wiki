@@ -23,11 +23,10 @@
             <ul>
                 <li><a href="{{path('app_accueil')}}">Accueil</a></li>
                 <li><a href="{{path('app_listeCategorie')}}">Catégories</a></li>
-                <li><a href="">Privé</a></li>
             </ul>
             <ul>
             {% if is_granted('ROLE_USER') %}
-                <li><a href="">Mes articles></a></li>
+                <li><a href="">Mes articles</a></li>
                 <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
             {% else %}
                 <li><a href="{{ path('app_login') }}">Connexion</a></li>
