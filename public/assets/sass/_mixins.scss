@@ -14,3 +14,11 @@
         background: #f42d5b;
     }
 }
+
+@mixin pastille {
+    padding: 7px;
+    border-radius: 17px/50%;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+}

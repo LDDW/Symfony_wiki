@@ -8,16 +8,19 @@
 
 {% block body %}
 
+        <div class="description_accueil">
+            <p>Notre site vous permet de rester informé des dernières nouveautés et des dernières mises à jour concernant les produits Apple. Que ce soit les iPhones, les iPads, les Macs ou les autres appareils de la marque, nous vous tenons au courant de tout ce qu'il y a à savoir. Nous vous proposons également des analyses, des tests et des avis sur les différents produits pour vous aider à faire le meilleur choix. Rejoignez notre communauté de passionnés d'Apple et restez à la pointe de l'actualité.</p>
+            <hr class="rounded">
+        </div>
+
     <section>
         <div class="grid">
-            <a class="grid_item">
-                <h2>Streameurs</h2>
-                <img src="{{ asset('assets/images/car.jpg') }}" alt="">
+            {% for categorie in categories %}
+            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
+                <h2>{{ categorie.nom }}</h2>
+                <img src="{{ asset(categorie.image) }}" alt="">
             </a>
-            <a class="grid_item">
-                <h2>Acteurs</h2>  
-                <img src="{{ asset('assets/images/car.jpg') }}" alt="">
-            </a>
+            {% endfor %}
         </div>
         <br>
         <div class="grid">
