@@ -14,7 +14,8 @@ class AccueilController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $categories = $doctrine->getRepository(Categorie::class)->findAll();
+        $categorie1 = $doctrine->getRepository(Categorie::class)->findBy(['id' => 1]);
+        $categorie2 = $doctrine->getRepository(Categorie::class)->findBy(['id' => 2]);
         $article1 = $doctrine->getRepository(Articles::class)->findBy(['categorie' => 1]);
         $article2 = $doctrine->getRepository(Articles::class)->findBy(['categorie' => 2]);
         return $this->render('accueil/index.html.twig', [
