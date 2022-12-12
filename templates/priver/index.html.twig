@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes articles{% endblock %}
+
+{% block header %}
+    <h1>Mes articles</h1>
+{% endblock %}
+
+{% block body %}
+
+    <section>
+        <div class="grid">
+            {% for article in articles %}
+            <a class="grid_item">
+                <h2>{{ article.titre }}</h2>
+                <img src="{{ asset(article.image) }}" alt="">
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
