@@ -17,14 +17,9 @@ class CategorieController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $categories = $doctrine->getRepository(Categorie::class)->findAll();
-        foreach ($categories as $categorie) {
-            $categorie->articles = $doctrine->getRepository(Articles::class)->findBy(['categorie' => $categorie->getId()]);
-        }
-        $nombre = count($categories);
+        
         return $this->render('listeCategorie/index.html.twig', [
-            'categories' => $categories,
-            'nombre' => $nombre
-            
+            'categories' => $categories
         ]);
     }
 
@@ -35,8 +30,7 @@ class CategorieController extends AbstractController
         $nombre = count($articles);
 
         return $this->render('categorie/index.html.twig', [
-            'articles' => $articles,
-            'nombre' => $nombre
+            'articles' => $articles
         ]);
     }
 }
