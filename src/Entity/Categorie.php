@@ -21,7 +21,7 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-    #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Articles::class)]
+    #[ORM\ManyToMany(targetEntity: Articles::class, mappedBy: 'categorie')]
     private Collection $articles;
 
     public function __construct()
@@ -58,14 +58,6 @@ class Categorie
         return $this;
     }
 
-    /**
-     * @return Collection<int, Articles>
-     */
-    public function getArticles(): Collection
-    {
-        return $this->articles;
-    }
-
     public function addArticle(Articles $article): self
     {
         if (!$this->articles->contains($article)) {
@@ -86,5 +78,13 @@ class Categorie
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Articles>
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
     }
 }

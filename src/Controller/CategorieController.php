@@ -26,7 +26,7 @@ class CategorieController extends AbstractController
     #[Route('/categorie/{id_categorie}', name: 'show_categorie' , priority: 2, requirements: ['id_categorie' => '\d+'])]
     public function show_categorie(ManagerRegistry $doctrine,  int $id_categorie): Response
     {
-        $articles = $doctrine->getRepository(Articles::class)->findBy(['categorie' => $id_categorie]);
+        $articles = $doctrine->getRepository(Categorie::class)->find($id_categorie)->getArticles();
         $nombre = count($articles);
 
         return $this->render('categorie/index.html.twig', [
