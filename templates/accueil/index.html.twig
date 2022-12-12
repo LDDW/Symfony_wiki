@@ -15,12 +15,14 @@
 
     <section>
         <div class="grid">
-            {% for categorie in categories %}
-            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
-                <h2>{{ categorie.nom }}</h2>
-                <img src="{{ asset(categorie.image) }}" alt="">
+            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie1.id}) }}">
+                <h2>{{ categorie1.nom }}</h2>
+                <img src="{{ asset(categorie1.image) }}" alt="">
             </a>
-            {% endfor %}
+             <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie2.id}) }}">
+                <h2>{{ categorie2.nom }}</h2>
+                <img src="{{ asset(categorie2.image) }}" alt="">
+            </a>
         </div>
         <br>
         <div class="grid">
