@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Catégorie{% endblock %}
+
+{% block header %}
+    <h1>Liste des Catégorie</h1>
+{% endblock %}
+
+{% block body %}
+
+    <section>
+        <div class="grid">
+            {% for categorie in categories %}
+            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
+                <h2>{{ categorie.nom }}</h2>
+                <img src="{{ asset(categorie.image) }}" alt="">
+                <div class="displayPastille">
+                    <div class="pastille"> {{ categorie.articles|length }} {{ categorie.articles|length > 1 ? 'Articles' : 'Article' }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

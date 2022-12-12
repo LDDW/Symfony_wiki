@@ -18,26 +18,21 @@
         {# =============== BARRE DE NAVIGATION =============== #}
         <nav>
             <a href="{{path('app_accueil')}}">
-                <img src="{{ asset('assets/images/wiki.webp') }}" alt="">
+                <img src="{{ asset('assets/images/logoWiki.png') }}" alt="" style=' width :200px'>
             </a>
             <ul>
                 <li><a href="{{path('app_accueil')}}">Accueil</a></li>
-                <li><a href="/categorie/1">Iphones</a></li>
-                <li><a href="/categorie/2">Macs</a></li>
+                <li><a href="{{path('app_listeCategorie')}}">Catégories</a></li>
             </ul>
-
-
+            <ul>
             {% if is_granted('ROLE_USER') %}
-                <div>
-                    <a href=""><button>Mes articles</button></a>
-                    <a href="{{ path('app_logout') }}"><button>Déconnexion</button></a>
-                </div>
+                <li><a href="">Mes articles</a></li>
+                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
             {% else %}
-                <div>
-                    <a href="{{ path('app_login') }}"><button>Connexion</button></a>
-                    <a href="{{ path('app_register') }}"><button>Inscription</button></a> 
-                </div>
+                <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                <li><a href="{{ path('app_register') }}">Inscription</a></li>
             {% endif %}
+            </ul>
         </nav>
 
         {# =============== BANNIÈRE =============== #}
