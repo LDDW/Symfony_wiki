@@ -32,12 +32,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $username = null;
 
-    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Articles::class)]
-    private Collection $articles;
+    #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Article::class)]
+    private Collection $article;
 
     public function __construct()
     {
-        $this->articles = new ArrayCollection();
+        $this->article = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -123,26 +123,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Articles>
+     * @return Collection<int, Article>
      */
-    public function getArticles(): Collection
+    public function getArticle(): Collection
     {
-        return $this->articles;
+        return $this->article;
     }
 
-    public function addArticle(Articles $article): self
+    public function addArticle(Article $article): self
     {
-        if (!$this->articles->contains($article)) {
-            $this->articles->add($article);
+        if (!$this->article->contains($article)) {
+            $this->article->add($article);
             $article->setAuteur($this);
         }
 
         return $this;
     }
 
-    public function removeArticle(Articles $article): self
+    public function removeArticle(Article $article): self
     {
-        if ($this->articles->removeElement($article)) {
+        if ($this->article->removeElement($article)) {
             // set the owning side to null (unless already changed)
             if ($article->getAuteur() === $this) {
                 $article->setAuteur(null);

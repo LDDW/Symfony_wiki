@@ -21,12 +21,12 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-    #[ORM\ManyToMany(targetEntity: Articles::class, mappedBy: 'categorie')]
-    private Collection $articles;
+    #[ORM\ManyToMany(targetEntity: Article::class, mappedBy: 'categorie')]
+    private Collection $article;
 
     public function __construct()
     {
-        $this->articles = new ArrayCollection();
+        $this->article = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -58,19 +58,19 @@ class Categorie
         return $this;
     }
 
-    public function addArticle(Articles $article): self
+    public function addArticle(Article $article): self
     {
-        if (!$this->articles->contains($article)) {
-            $this->articles->add($article);
+        if (!$this->article->contains($article)) {
+            $this->article->add($article);
             $article->setCategorie($this);
         }
 
         return $this;
     }
 
-    public function removeArticle(Articles $article): self
+    public function removeArticle(Article $article): self
     {
-        if ($this->articles->removeElement($article)) {
+        if ($this->article->removeElement($article)) {
             // set the owning side to null (unless already changed)
             if ($article->getCategorie() === $this) {
                 $article->setCategorie(null);
@@ -81,10 +81,10 @@ class Categorie
     }
 
     /**
-     * @return Collection<int, Articles>
+     * @return Collection<int, Article>
      */
-    public function getArticles(): Collection
+    public function getArticle(): Collection
     {
-        return $this->articles;
+        return $this->article;
     }
 }

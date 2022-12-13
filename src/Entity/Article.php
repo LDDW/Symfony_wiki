@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticlesRepository;
+use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ArticlesRepository::class)]
-class Articles
+#[ORM\Entity(repositoryClass: ArticleRepository::class)]
+class Article
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -25,11 +25,11 @@ class Articles
     #[ORM\Column(type: Types::TEXT)]
     private ?string $informations = null;
 
-    #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\ManyToOne(inversedBy: 'article')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $auteur = null;
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'articles')]
+    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'article')]
     private Collection $categorie;
 
     public function __construct()
