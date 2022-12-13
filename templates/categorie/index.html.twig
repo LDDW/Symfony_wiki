@@ -24,9 +24,9 @@
   {% for article in articles %}
     <tr>
       <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a> </th>
-      <td>{{ article.titre}}</td>
-      <td>{{ article.auteur.username}}</td>
-      <td>{{ article.informations}}</td> 
+      <td>{{ article.titre }}</td>
+      <td>{{ article.auteur.username }}</td>
+      <td>{{ article.informations }}</td> 
       <td>
         <a href="/article/{{ article.id }}">
           <button type="button">Voir l'article</button>

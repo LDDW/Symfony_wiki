@@ -18,9 +18,8 @@
     <div><p> Auteur : {{ article.auteur.username }}</p> </div>
     <ul>
         <li> {{ article.titre }} </li>
-        
         <li> {{ article.informations }} </li>
-        <img src='{{ asset(article.image)}}'>
+        <img src='{{ asset(article.image) }}'>
        </ul>
 </div>
 {% endblock %}
