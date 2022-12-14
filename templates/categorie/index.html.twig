@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategorieController!{% endblock %}
+{% block title %}Liste Articles{% endblock %}
+
+{% block header %}
+    <h1>Liste Article</h1>
+{% endblock %}
 
 {% block body %}
 <style>
@@ -13,10 +17,10 @@
     <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">{{ articles|length }} Article(s)</th>
+      <th scope="col">{{ articles|length}} {{ articles|length > 1 ? 'Articles' : 'Article' }} </th>
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
-      <th scope="col">Informations</th>
+      <th scope="col">Informations </th>
       <th scope="col">Articles</th>
     </tr>
   </thead>
@@ -26,7 +30,7 @@
       <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a> </th>
       <td>{{ article.titre }}</td>
       <td>{{ article.auteur.username }}</td>
-      <td>{{ article.informations }}</td> 
+      <td class="information">{{ article.informations }}</td>
       <td>
         <a href="/article/{{ article.id }}">
           <button type="button">Voir l'article</button>
