@@ -15,7 +15,7 @@ class AccueilController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $categories = $doctrine->getRepository(Categorie::class)->findAll();
-        $articles = $doctrine->getRepository(Articles::class)->findAll();
+        $articles = $doctrine->getRepository(Article::class)->findAll();
 
         return $this->render('accueil/index.html.twig', [
             'articles' => $this->getRandom($articles),

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Articles;
+use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Form\NewArticleFormType;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,7 +18,7 @@ class NewArticleController extends AbstractController
     {
         $entityManager = $doctrine->getManager();
 
-        $article = new Articles();
+        $article = new Article();
         $form = $this->createForm(NewArticleFormType::class, $article);
         $form->handleRequest($request);
 
