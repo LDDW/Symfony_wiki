@@ -10,19 +10,29 @@ use App\Entity\Articles;
 use App\Entity\Categorie;
 
 class AccueilController extends AbstractController
-{
+{   
     #[Route('/', name: 'app_accueil')]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $categorie1 = $doctrine->getRepository(Categorie::class)->findBy(['id' => 1]);
-        $categorie2 = $doctrine->getRepository(Categorie::class)->findBy(['id' => 2]);
-        $article1 = $doctrine->getRepository(Articles::class)->findBy(['categorie' => 1]);
-        $article2 = $doctrine->getRepository(Articles::class)->findBy(['categorie' => 2]);
+        $categories = $doctrine->getRepository(Categorie::class)->findAll();
+        $articles = $doctrine->getRepository(Articles::class)->findAll();
+
         return $this->render('accueil/index.html.twig', [
-            'article1' => $article1[random_int(0, count($article1) - 1)],
-            'article2' => $article2[random_int(0, count($article2) - 1)],
-            'categorie1' => $categories[random_int(0, count($categories) - 1)],
-            'categorie2' => $categories[random_int(0, count($categories) - 1)],
+            'articles' => $this->getRandom($articles),
+            'categories' => $this->getRandom($categories),
         ]);
     }
+
+    /**
+     * This function permit to return 2 random index in array param
+     * 
+     * @param array $data
+     * @return array 
+     */
+    private function getRandom(Array $data){
+        $array = $data;
+        shuffle($array);
+        $array = array_slice($array, 0, 2);
+        return $array;
+    } 
 }

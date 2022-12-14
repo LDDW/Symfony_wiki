@@ -2,6 +2,4 @@
 
 ## authentification 
 https://www.youtube.com/watch?v=INfHFDIjgrw
-
-- créer une entity user 
-- migration user
+https://symfonycasts.com/screencast/symfony-forms/flash-messages
