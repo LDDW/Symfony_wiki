@@ -14,25 +14,21 @@
     </div>
     <section>
         <div class="grid">
-            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie1.id}) }}">
-                <h2>{{ categorie1.nom }}</h2>
-                <img src="{{ asset(categorie1.image) }}" alt="">
-            </a>
-             <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie2.id}) }}">
-                <h2>{{ categorie2.nom }}</h2>
-                <img src="{{ asset(categorie2.image) }}" alt="">
-            </a>
+            {% for categorie in categories %}
+                <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
+                    <h2>{{ categorie.nom }}</h2>
+                    <img src="{{ asset(categorie.image) }}" alt="">
+                </a>
+            {% endfor %}
         </div>
         <br>
         <div class="grid">
-            <a class="grid_item" href='article/{{ article1.id }}'>
-                <img src="{{ asset(article1.image)}}" alt="" style=' width :200px'>
-                <h2>{{ article1.titre }}</h2>
-            </a>
-            <a class="grid_item" href='article/{{ article2.id }}'>
-                <img src="{{ asset(article2.image)}}" alt="" style=' width :200px'>
-                <h2>{{ article2.titre }}</h2>
-            </a>
+            {% for article in articles %}
+                <a class="grid_item" href='{{ path('article_show', {'id': article.id}) }}'>
+                    <h2>{{ article.titre }}</h2>
+                    <img src="{{ asset(article.image)}}" alt="" style=' width :200px'>
+                </a>
+            {% endfor %}
         </div>
     </section>
 

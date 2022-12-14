@@ -10,6 +10,12 @@ use App\Entity\Article;
 
 class ArticleController extends AbstractController
 {
+    /**
+     * This function show articles in article pages
+     * 
+     * @param $doctrine, $id
+     * @return :Response
+     */
     #[Route('/article/{id}', name: 'article_show')]
     public function index(ManagerRegistry $doctrine,int $id): Response
     {
