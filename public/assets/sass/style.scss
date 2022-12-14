@@ -28,6 +28,9 @@ button {
     border: 0;
     color: $white;
     background: $red;
+    border-radius: 15px;
+    height: 25px;
+    width: 80px;
 }
 // ======================================== NAVBAR ======================================== //
 nav {
@@ -171,7 +174,7 @@ hr.rounded {
     border-radius: 5px;
   }
 
-  // ======================================== DESCRIPTION ======================================== //
+// ======================================== DESCRIPTION ======================================== //
 .description_accueil {
     width: 80%;
     margin: auto;
@@ -181,3 +184,26 @@ hr.rounded {
         margin-bottom: 10px;
     }
 }
+
+// ======================================== TABLEAU ======================================== //
+.table {
+    td,
+    th {
+      padding: 10px; 
+    }
+    // td {
+    //     max-width: 200px;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     white-space: nowrap;
+    //   }
+  }
+.information {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+  
+
+
