@@ -213,17 +213,17 @@ hr.rounded {
 
 // ======================================== TABLEAU ======================================== //
 .table {
-    td,
+    td{
+        text-align: center;
+    }
+    td span {
+        display: inline-block;
+    }
     th {
       padding: 10px; 
     }
-    // td {
-    //     max-width: 200px;
-    //     overflow: hidden;
-    //     text-overflow: ellipsis;
-    //     white-space: nowrap;
-    //   }
   }
+
 // ======================================== CELLULE INFORMATION ======================================== //
 .information {
         max-width: 300px;
@@ -249,6 +249,8 @@ form {
 }
 
 // ======================================== MES ARTICLES ======================================== //
+// ======================= ICON ======================= //
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,

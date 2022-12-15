@@ -37,20 +37,24 @@
                         <td>{{ article.auteur.username }}</td>
                         <td class="information">{{ article.informations }}</td>
                         <td>
-                            <a href="{{ path('article_edit', {'id': article.id}) }}">
-                                <button type="button" class="boutonModif">Modifier
-                                    <span class="material-symbols-outlined">
-                                      edit
-                                    </span>
-                                </button>
-                            </a>
-                            <a href="{{ path('article_delete', {'id': article.id}) }}">
-                                <button type="button" class="boutonSuppr">Supprimer
-                                    <span class="material-symbols-outlined">
-                                      delete
-                                    </span>
-                                </button>
-                            </a>
+                            <span>
+                                <a href="{{ path('article_edit', {'id': article.id}) }}">
+                                    <button type="button" class="boutonModif">Modifier
+                                        <span class="material-symbols-outlined">
+                                        edit
+                                        </span>
+                                    </button>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="{{ path('article_delete', {'id': article.id}) }}">
+                                    <button type="button" class="boutonSuppr">Supprimer
+                                        <span class="material-symbols-outlined">
+                                        delete
+                                        </span>
+                                    </button>
+                                </a>
+                            </span>
                         </td>
                     </tr>
                 {% endfor %}
