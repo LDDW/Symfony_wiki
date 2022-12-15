@@ -7,9 +7,7 @@
 {% endblock %}
 
 {% block body %}
-
     <section>
-        <a href="{{ path('app_new_article') }}"><button>Créer un nouvel article</button></a>
         <div class="example-wrapper">
 {# <img src="/assets/uploads/ponce.jpg "> #}
     <table class="table table-hover">
@@ -19,7 +17,15 @@
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
       <th scope="col">Informations </th>
-      <th scope="col">Articles</th>
+      <th scope="col">
+        <a href="{{ path('app_new_article') }}">
+          <button class = "boutonAjout">Créer un nouvel article
+            <span class="material-symbols-outlined">
+              add
+            </span>
+          </button>
+        </a>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -31,14 +37,20 @@
       <td class="information">{{ article.informations }}</td>
       <td>
           <a href="">
-              <button type="button">Modifier</button>
+              <button type="button" class="boutonModif">Modifier
+                <span class="material-symbols-outlined">
+                  edit
+                </span>
+              </button>
           </a>
-      </td> 
-      <td>
-        <a href="">
-              <button type="button">Supprimer</button>
+          <a href="">
+              <button type="button" class="boutonSuppr">Supprimer
+                <span class="material-symbols-outlined">
+                  delete
+                </span>
+              </button>
           </a>
-      </td>   
+      </td>  
   </tr>
   {% endfor %}
 </tbody>

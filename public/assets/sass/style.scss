@@ -31,6 +31,29 @@ button {
     border-radius: 15px;
     height: 25px;
     width: 80px;
+    
+}
+
+.boutonAjout {
+    float: right;
+    margin: 10px;
+    height: 50px !important;
+    width: 150px !important;
+    align-items: center;
+}
+
+.boutonSuppr{
+    margin: 10px;
+    height: 50px !important;
+    width: 70px !important;
+    align-items: center;
+}
+
+.boutonModif{
+    margin: 10px;
+    height: 50px !important;
+    width: 70px !important;
+    align-items: center;
 }
 // ======================================== NAVBAR ======================================== //
 nav {
@@ -131,6 +154,9 @@ main {
         }
     }
 }
+
+.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 // ======================================== SECTION ======================================== //
 section {
     width: 80%;
@@ -198,7 +224,7 @@ hr.rounded {
     //     white-space: nowrap;
     //   }
   }
-// ======================================== Cellule information ======================================== //
+// ======================================== CELLULE INFORMATION ======================================== //
 .information {
         max-width: 300px;
         overflow: hidden;
@@ -206,7 +232,7 @@ hr.rounded {
         white-space: nowrap;
       }
   
-// ======================================== Connexion ======================================== //
+// ======================================== CONNEXION ======================================== //
 
 .center {
     text-align: -moz-center !important;
@@ -220,4 +246,29 @@ form {
     max-width: 600px;
     border: solid gray 1px;
     border-radius: 15px;
+}
+
+// ======================================== MES ARTICLES ======================================== //
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 200,
+  'opsz' 24
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 200,
+  'opsz' 24
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 200,
+  'opsz' 24
 }
