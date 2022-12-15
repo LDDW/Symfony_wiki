@@ -9,7 +9,11 @@
 {% block body %}
 
     <div class="description_accueil">
-        <p>Notre site vous permet de rester informé des dernières nouveautés et des dernières mises à jour concernant les produits Apple. Que ce soit les iPhones, les iPads, les Macs ou les autres appareils de la marque, nous vous tenons au courant de tout ce qu'il y a à savoir. Nous vous proposons également des analyses, des tests et des avis sur les différents produits pour vous aider à faire le meilleur choix. Rejoignez notre communauté de passionnés d'Apple et restez à la pointe de l'actualité.</p>
+        <p>Notre site vous permet de rester informé des dernières nouveautés et des dernières mises à jour concernant
+            les produits Apple. Que ce soit les iPhones, les iPads, les Macs ou les autres appareils de la marque, nous
+            vous tenons au courant de tout ce qu'il y a à savoir. Nous vous proposons également des analyses, des tests
+            et des avis sur les différents produits pour vous aider à faire le meilleur choix. Rejoignez notre
+            communauté de passionnés d'Apple et restez à la pointe de l'actualité.</p>
         <hr class="rounded">
     </div>
     <section>
@@ -26,7 +30,7 @@
             {% for article in articles %}
                 <a class="grid_item" href='{{ path('article_show', {'id': article.id}) }}'>
                     <h2>{{ article.titre }}</h2>
-                    <img src="{{ asset(article.image)}}" alt="" style=' width :200px'>
+                    <img src="{{ asset(article.image) }}" alt="" style=' width :200px'>
                 </a>
             {% endfor %}
         </div>

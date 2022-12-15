@@ -2,15 +2,20 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
+use App\Entity\Categorie;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\Persistence\ManagerRegistry;
-use App\Entity\Article;
-use App\Entity\Categorie;
 
 class AccueilController extends AbstractController
-{   
+{
+    /**
+     * @Route("/", name="accueil")
+     *
+     * @param ManagerRegistry $doctrine
+     */
     #[Route('/', name: 'app_accueil')]
     public function index(ManagerRegistry $doctrine): Response
     {
@@ -25,14 +30,15 @@ class AccueilController extends AbstractController
 
     /**
      * This function permit to return 2 random index in array param
-     * 
+     *
      * @param array $data
-     * @return array 
+     * @return array
      */
-    private function getRandom(Array $data){
+    private function getRandom(array $data)
+    {
         $array = $data;
         shuffle($array);
         $array = array_slice($array, 0, 2);
         return $array;
-    } 
+    }
 }

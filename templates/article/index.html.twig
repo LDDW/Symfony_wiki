@@ -3,18 +3,21 @@
 {% block title %}Article{% endblock %}
 
 {% block header %}
-    <h1>{{ article.titre}}</h1>
+    <h1>{{ article.titre }}</h1>
 {% endblock %}
 
 {% block body %}
 <div class="example-wrapper">
     <h1>{{ article.titre }}</h1>
 
-    <div><p> Auteur : {{ article.auteur.username }}</p> </div>
-    <ul>
-        <li> {{ article.titre}} </li>
-        <li> {{ article.informations}} </li>
-        <img src='{{ asset(article.image)}}'>
-    </ul>
-</div>
-{% endblock %}
+    <div class="example-wrapper">
+        <h1>{{ article.titre }}</h1>
+
+        <div><p> Auteur : {{ article.auteur.username }}</p></div>
+        <ul>
+            <li> {{ article.titre }} </li>
+            <li> {{ article.informations }} </li>
+            <img src='{{ asset(article.image) }}'>
+        </ul>
+    </div>
+    {% endblock %}

@@ -7,17 +7,37 @@
 {% endblock %}
 
 {% block body %}
-<div class="example-wrapper">   
+<div class="example-wrapper">
     {{ form_start(registrationForm) }}
-        <h1 class="h3 mb-3 font-weight-normal">Veuillez vous inscrire </h1>
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <style>
+        <
+        h1 class
 
-        <button type="submit" class="btn">S'inscrire</button>
-    {{ form_end(registrationForm) }}
-</div>
-{% endblock %}
+        =
+        "h3 mb-3 font-weight-normal"
+        > Veuillez vous inscrire
+
+        <
+        /
+        h1 >{{ form_row(registrationForm.username) }}{{ form_row(registrationForm.email) }}{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}{{ form_row(registrationForm.agreeTerms) }}
+
+        <
+        button type
+
+        =
+        "submit"
+        class
+
+        =
+        "btn"
+        > S
+
+        'inscrire</button>
+        {{ form_end(registrationForm) }}
+        <
+        /
+        div >
+
+        {% endblock %}

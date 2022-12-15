@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {% block head %}
-            <meta charset="UTF-8">
-            <title>{% block title %}{% endblock %}</title>
-            <link rel="shortcut icon" type="image/jpg" href="{{ asset('assets/images/favicon (2).ico') }}"/>
-            {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="shortcut icon" type="image/jpg" href="{{ asset('assets/images/favicon (2).ico') }}"/>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
-            {# =============== CSS =============== #}
-            {% block stylesheets %}
-                <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-            {% endblock %}
+        {# =============== CSS =============== #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
-    </head>
-    <body>
+    {% endblock %}
+</head>
+<body>
 
-        {# =============== MAIN =============== #}
-        <main>
-        {# =============== BARRE DE NAVIGATION =============== #}
-        <nav>
-            <a href="{{path('app_accueil')}}">
-                <img src="{{ asset('assets/images/logoWiki.png') }}" alt="" style=' width :200px'>
-            </a>
-            <ul>
-                <li><a href="{{path('app_accueil')}}">Accueil</a></li>
-            </ul>
-        </nav>
-        {# =============== BANNIÈRE =============== #}
-        <header>
-            {% block header %}{% endblock %}
-        </header>
+{# =============== MAIN =============== #}
+<main>
+    {# =============== BARRE DE NAVIGATION =============== #}
+    <nav>
+        <a href="{{ path('app_accueil') }}">
+            <img src="{{ asset('assets/images/logoWiki.png') }}" alt="" style=' width :200px'>
+        </a>
+        <ul>
+            <li><a href="{{ path('app_accueil') }}">Accueil</a></li>
+        </ul>
+    </nav>
+    {# =============== BANNIÈRE =============== #}
+    <header>
+        {% block header %}{% endblock %}
+    </header>
 
-        {# =============== MAIN =============== #}
-        <main>
-            {% block body %}{% endblock %}
-        </main>
+    {# =============== MAIN =============== #}
+    <main>
+        {% block body %}{% endblock %}
+    </main>
 
-        {# =============== FOOTER =============== #}
-        <footer>    
-            <p>Benjamin Drouin</p>
-            <p>Jules Boismon</p>
-            <p>Cyril Bizouarn</p>
-        </footer>
+    {# =============== FOOTER =============== #}
+    <footer>
+        <p>Benjamin Drouin</p>
+        <p>Jules Boismon</p>
+        <p>Cyril Bizouarn</p>
+    </footer>
 
-        {# =============== JS =============== #}
-        {% block javascripts %}
-            
-        {% endblock %}
+    {# =============== JS =============== #}
+    {% block javascripts %}
 
-    </body>
+    {% endblock %}
+
+</body>
 </html>

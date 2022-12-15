@@ -11,13 +11,13 @@
     <section>
         <div class="grid">
             {% for categorie in categories %}
-            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
-                <h2>{{ categorie.nom }}</h2>
-                <img src="{{ asset(categorie.image) }}" alt="">
-                <div class="displayPastille">
-                    <div class="pastille"> {{ categorie.article|length }} {{ categorie.article|length > 1 ? 'Articles' : 'Article' }}</div>
-                </div>
-            </a>
+                <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
+                    <h2>{{ categorie.nom }}</h2>
+                    <img src="{{ asset(categorie.image) }}" alt="">
+                    <div class="displayPastille">
+                        <div class="pastille"> {{ categorie.article|length }} {{ categorie.article|length > 1 ? 'Articles' : 'Article' }}</div>
+                    </div>
+                </a>
             {% endfor %}
         </div>
     </section>
