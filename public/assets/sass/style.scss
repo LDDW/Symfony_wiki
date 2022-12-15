@@ -198,6 +198,7 @@ hr.rounded {
     //     white-space: nowrap;
     //   }
   }
+// ======================================== Cellule information ======================================== //
 .information {
         max-width: 300px;
         overflow: hidden;
@@ -205,5 +206,18 @@ hr.rounded {
         white-space: nowrap;
       }
   
+// ======================================== Connexion ======================================== //
 
+.center {
+    text-align: -moz-center !important;
+    text-align: center !important;
+}
 
+form {
+    display: block;
+    margin: auto;
+    padding: 15px;
+    max-width: 600px;
+    border: solid gray 1px;
+    border-radius: 15px;
+}

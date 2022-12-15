@@ -20,6 +20,9 @@ class Article
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
+    private ?int $auteur_id = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -78,14 +81,14 @@ class Article
         return $this;
     }
 
-    public function getCategorie(): ?Categorie
+    public function getAuteur_id(): ?Int
     {
-        return $this->categorie;
+        return $this->auteur_id;
     }
 
-    public function setCategorie(?Categorie $categorie): self
+    public function setCategorie(int $auteur_id): self
     {
-        $this->categorie = $categorie;
+        $this->auteur_id = $auteur_id;
 
         return $this;
     }
