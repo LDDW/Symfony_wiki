@@ -7,37 +7,33 @@
 {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
 <div class="example-wrapper">
-{# <img src="/assets/uploads/ponce.jpg "> #}
+    {# <img src="/assets/uploads/ponce.jpg "> #}
     <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">{{ articles|length}} {{ articles|length > 1 ? 'Articles' : 'Article' }} </th>
-      <th scope="col">Titre</th>
-      <th scope="col">Auteur</th>
-      <th scope="col">Informations </th>
-      <th scope="col">Articles</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for article in articles %}
-    <tr>
-      <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a> </th>
-      <td>{{ article.titre }}</td>
-      <td>{{ article.auteur.username }}</td>
-      <td class="information">{{ article.informations }}</td>
-      <td>
-          <a href="/article/{{ article.id }}">
-              <button type="button">Voir l'article</button>
-          </a>
-      </td>    
-  </tr>
-  {% endfor %}
-</tbody>
-</table>
-{% endblock %}
+        <thead>
+        <tr>
+            <th scope="col">{{ articles|length }} {{ articles|length > 1 ? 'Articles' : 'Article' }} </th>
+            <th scope="col">Titre</th>
+            <th scope="col">Auteur</th>
+            <th scope="col">Informations</th>
+            <th scope="col">Articles</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}"
+                                                                         width="100"></a></th>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.auteur.username }}</td>
+                <td class="information">{{ article.informations }}</td>
+                <td>
+                    <a href="/article/{{ article.id }}">
+                        <button type="button">Voir l'article</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

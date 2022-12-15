@@ -7,42 +7,60 @@
 {% endblock %}
 
 {% block body %}
-
     <section>
-        <a href="{{ path('app_new_article') }}"><button>Créer un nouvel article</button></a>
         <div class="example-wrapper">
-{# <img src="/assets/uploads/ponce.jpg "> #}
-    <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">{{ articles|length}} {{ articles|length > 1 ? 'Articles' : 'Article' }} </th>
-      <th scope="col">Titre</th>
-      <th scope="col">Auteur</th>
-      <th scope="col">Informations </th>
-      <th scope="col">Articles</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for article in articles %}
-    <tr>
-      <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a> </th>
-      <td>{{ article.titre }}</td>
-      <td>{{ article.auteur.username }}</td>
-      <td class="information">{{ article.informations }}</td>
-      <td>
-          <a href="">
-              <button type="button">Modifier</button>
-          </a>
-      </td> 
-      <td>
-        <a href="">
-              <button type="button">Supprimer</button>
-          </a>
-      </td>   
-  </tr>
-  {% endfor %}
-</tbody>
-</table>
+            {# <img src="/assets/uploads/ponce.jpg "> #}
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">{{ articles|length }} {{ articles|length > 1 ? 'Articles' : 'Article' }} </th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">Informations</th>
+                    <th scope="col">
+                        <a href="{{ path('app_new_article') }}">
+                            <button class="boutonAjout">Créer un nouvel article
+                                <span class="material-symbols-outlined">
+                                  add
+                                </span>
+                            </button>
+                        </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for article in articles %}
+                    <tr>
+                        <th scope="row"><a href='/article/{{ article.id }}'>
+                                <img src="{{ asset(article.image) }}" width="100"></a></th>
+                        <td>{{ article.titre }}</td>
+                        <td>{{ article.auteur.username }}</td>
+                        <td class="information">{{ article.informations }}</td>
+                        <td>
+                            <span>
+                                <a href="{{ path('article_edit', {'id': article.id}) }}">
+                                    <button type="button" class="boutonModif">Modifier
+                                        <span class="material-symbols-outlined">
+                                        edit
+                                        </span>
+                                    </button>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="{{ path('article_delete', {'id': article.id}) }}">
+                                    <button type="button" class="boutonSuppr">Supprimer
+                                        <span class="material-symbols-outlined">
+                                        delete
+                                        </span>
+                                    </button>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </section>
 
 {% endblock %}

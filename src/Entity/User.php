@@ -64,17 +64,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
-        /**
+    /**
      * A visual identifier that represents this user.
      *
      * @see UserInterface
      */
     public function getUserId(): string
     {
-        return (string) $this->id;
+        return (string)$this->id;
     }
 
     /**

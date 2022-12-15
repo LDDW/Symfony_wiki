@@ -81,6 +81,18 @@ class Article
         return $this;
     }
 
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
     public function getAuteur(): ?User
     {
         return $this->auteur;

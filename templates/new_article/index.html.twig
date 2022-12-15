@@ -10,13 +10,13 @@
     <section>
         <div class="grid">
             {{ form_start(newArticleForm) }}
-                {{ form_errors(newArticleForm) }}
+            {{ form_errors(newArticleForm) }}
 
-                {{ form_row(newArticleForm.titre) }}
-                {{ form_row(newArticleForm.informations) }}
-                {{ form_row(newArticleForm.image) }}
-                {# {{ form_row(newArticleForm.categorie) }} #}
-                {{ form_row(newArticleForm.save) }}
+            {{ form_row(newArticleForm.titre) }}
+            {{ form_row(newArticleForm.informations) }}
+            {{ form_row(newArticleForm.image) }}
+            {# {{ form_row(newArticleForm.categorie) }} #}
+            {{ form_row(newArticleForm.save) }}
 
             {{ form_end(newArticleForm) }}
         </div>
