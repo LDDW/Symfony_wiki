@@ -10,18 +10,39 @@
 
     <section>
         <a href="{{ path('app_new_article') }}"><button>Créer un nouvel article</button></a>
-        <div class="grid">
-            <ul>
-                {% for article in articles %}
-                    <li>
-                        <a class="grid_item">
-                            <h2>{{ article.titre }}</h2>
-                            {# <img src="{{ asset(article.image) }}" alt=""> #}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+        <div class="example-wrapper">
+{# <img src="/assets/uploads/ponce.jpg "> #}
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">{{ articles|length}} {{ articles|length > 1 ? 'Articles' : 'Article' }} </th>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Informations </th>
+      <th scope="col">Articles</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for article in articles %}
+    <tr>
+      <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a> </th>
+      <td>{{ article.titre }}</td>
+      <td>{{ article.auteur.username }}</td>
+      <td class="information">{{ article.informations }}</td>
+      <td>
+          <a href="">
+              <button type="button">Modifier</button>
+          </a>
+      </td> 
+      <td>
+        <a href="">
+              <button type="button">Supprimer</button>
+          </a>
+      </td>   
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
     </section>
 
 {% endblock %}
