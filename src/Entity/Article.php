@@ -20,9 +20,6 @@ class Article
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
-    private ?int $auteur_id = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -34,6 +31,9 @@ class Article
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'article')]
     private Collection $categorie;
+
+    #[ORM\Column]
+    private ?int $auteur_id = null;
 
     public function __construct()
     {
@@ -77,18 +77,6 @@ class Article
     public function setInformations(string $informations): self
     {
         $this->informations = $informations;
-
-        return $this;
-    }
-
-    public function getAuteur_id(): ?Int
-    {
-        return $this->auteur_id;
-    }
-
-    public function setCategorie(int $auteur_id): self
-    {
-        $this->auteur_id = $auteur_id;
 
         return $this;
     }
