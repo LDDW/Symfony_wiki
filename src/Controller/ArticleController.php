@@ -96,6 +96,15 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // save image
+            $image = $form->get('image')->getData();
+            $imageName = $image->getClientOriginalName();
+            $imageName = md5(uniqid()) . '.' . pathinfo($imageName, PATHINFO_EXTENSION);
+            $image->move(
+                'assets/uploads',
+                $imageName
+            );
+            $article->setImage('assets/uploads/' . $imageName);
 
             $article->setAuteur($user);
             $entityManager->persist($article);
@@ -141,6 +150,16 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // overwrite image
+            $image = $form->get('image')->getData();
+            $imageName = $article->getImage();
+            $imageName = substr($imageName, strrpos($imageName, '/') + 1);
+            $image->move(
+                'assets/uploads',
+                $imageName
+            );
+            $article->setImage('assets/uploads' . $image->getClientOriginalName());
+
             $entityManager->flush();
 
             return $this->redirectToRoute('app_prive');
