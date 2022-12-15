@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Articles;
+use App\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,26 +17,20 @@ class CategorieController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $categories = $doctrine->getRepository(Categorie::class)->findAll();
-        foreach ($categories as $categorie) {
-            $categorie->articles = $doctrine->getRepository(Articles::class)->findBy(['categorie' => $categorie->getId()]);
-        }
-        $nombre = count($categories);
+        
         return $this->render('listeCategorie/index.html.twig', [
-            'categories' => $categories,
-            'nombre' => $nombre
-            
+            'categories' => $categories
         ]);
     }
 
     #[Route('/categorie/{id_categorie}', name: 'show_categorie' , priority: 2, requirements: ['id_categorie' => '\d+'])]
     public function show_categorie(ManagerRegistry $doctrine,  int $id_categorie): Response
     {
-        $articles = $doctrine->getRepository(Articles::class)->findBy(['categorie' => $id_categorie]);
+        $articles = $doctrine->getRepository(Categorie::class)->find($id_categorie)->getArticle();
         $nombre = count($articles);
 
         return $this->render('categorie/index.html.twig', [
-            'articles' => $articles,
-            'nombre' => $nombre
+            'articles' => $articles
         ]);
     }
 }

@@ -8,32 +8,27 @@
 
 {% block body %}
 
-        <div class="description_accueil">
-            <p>Notre site vous permet de rester informé des dernières nouveautés et des dernières mises à jour concernant les produits Apple. Que ce soit les iPhones, les iPads, les Macs ou les autres appareils de la marque, nous vous tenons au courant de tout ce qu'il y a à savoir. Nous vous proposons également des analyses, des tests et des avis sur les différents produits pour vous aider à faire le meilleur choix. Rejoignez notre communauté de passionnés d'Apple et restez à la pointe de l'actualité.</p>
-            <hr class="rounded">
-        </div>
-
+    <div class="description_accueil">
+        <p>Notre site vous permet de rester informé des dernières nouveautés et des dernières mises à jour concernant les produits Apple. Que ce soit les iPhones, les iPads, les Macs ou les autres appareils de la marque, nous vous tenons au courant de tout ce qu'il y a à savoir. Nous vous proposons également des analyses, des tests et des avis sur les différents produits pour vous aider à faire le meilleur choix. Rejoignez notre communauté de passionnés d'Apple et restez à la pointe de l'actualité.</p>
+        <hr class="rounded">
+    </div>
     <section>
         <div class="grid">
-            <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie1.id}) }}">
-                <h2>{{ categorie1.nom }}</h2>
-                <img src="{{ asset(categorie1.image) }}" alt="">
-            </a>
-             <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie2.id}) }}">
-                <h2>{{ categorie2.nom }}</h2>
-                <img src="{{ asset(categorie2.image) }}" alt="">
-            </a>
+            {% for categorie in categories %}
+                <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
+                    <h2>{{ categorie.nom }}</h2>
+                    <img src="{{ asset(categorie.image) }}" alt="">
+                </a>
+            {% endfor %}
         </div>
         <br>
         <div class="grid">
-            <a class="grid_item" href='article/{{ article1.id }}'>
-                <img src="{{ asset(article1.image)}}" alt="" style=' width :200px'>
-                <h2>{{ article1.titre }}</h2>
-            </a>
-            <a class="grid_item" href='article/{{ article2.id }}'>
-                <img src="{{ asset(article2.image)}}" alt="" style=' width :200px'>
-                <h2>{{ article2.titre }}</h2>
-            </a>
+            {% for article in articles %}
+                <a class="grid_item" href='{{ path('article_show', {'id': article.id}) }}'>
+                    <h2>{{ article.titre }}</h2>
+                    <img src="{{ asset(article.image)}}" alt="" style=' width :200px'>
+                </a>
+            {% endfor %}
         </div>
     </section>
 

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes articles{% endblock %}
+
+{% block header %}
+    <h1>Mes articles</h1>
+{% endblock %}
+
+{% block body %}
+
+    <section>
+        <a href="{{ path('app_new_article') }}"><button>Créer un nouvel article</button></a>
+        <div class="grid">
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        <a class="grid_item">
+                            <h2>{{ article.titre }}</h2>
+                            {# <img src="{{ asset(article.image) }}" alt=""> #}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
