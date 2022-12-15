@@ -23,7 +23,9 @@ class PriveController extends AbstractController
     {
         $user = $this->security->getUser(); // null or UserInterface, if logged in
 
-        $articles = $doctrine->getRepository(Article::class)->findBy(array('auteur' => $user->getUsername()));
+        // $articles = $doctrine->getRepository(Article::class)->findBy(array('auteur' => $user->getUserIdentifier()));
+        $articles = $doctrine->getRepository(Article::class)->findBy(['auteur_id' => $user->getUserId()]);
+        // print_r($articles2 = $doctrine->getRepository(Article::class)->findBy(['auteur_id' => $user->getUserId()]));
         return $this->render('prive/index.html.twig', [
             'articles' => $articles,
         ]);
