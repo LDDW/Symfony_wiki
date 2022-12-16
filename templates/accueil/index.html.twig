@@ -20,7 +20,7 @@
         <div class="grid">
             {% for categorie in categories %}
                 <a class="grid_item" href="{{ path('show_categorie', {'id_categorie': categorie.id}) }}">
-                    <h2>{{ categorie.nom }}</h2>
+                    <h2 class="text_item">{{ categorie.nom }}</h2>
                     <img src="{{ asset(categorie.image) }}" alt="">
                 </a>
             {% endfor %}
