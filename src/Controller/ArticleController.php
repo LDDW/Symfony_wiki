@@ -101,7 +101,7 @@ class ArticleController extends AbstractController
             $imageName = $image->getClientOriginalName();
             $imageName = md5(uniqid()) . '.' . pathinfo($imageName, PATHINFO_EXTENSION);
             $image->move(
-                'assets/uploads',
+                'assets/uploads/',
                 $imageName
             );
             $article->setImage('assets/uploads/' . $imageName);
@@ -148,19 +148,31 @@ class ArticleController extends AbstractController
 
         $form = $this->createForm(NewArticleFormType::class, $article);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             // overwrite image
             $image = $form->get('image')->getData();
-            $imageName = $article->getImage();
-            $imageName = substr($imageName, strrpos($imageName, '/') + 1);
+            $imageName = $image->getClientOriginalName();
+            $imageName = md5(uniqid()) . '.' . pathinfo($imageName, PATHINFO_EXTENSION);
             $image->move(
-                'assets/uploads',
+                'assets/uploads/',
                 $imageName
             );
-            $article->setImage('assets/uploads' . $image->getClientOriginalName());
+            $article->setImage('assets/uploads/' . $imageName);
 
+            $article->setAuteur($user);
+            $entityManager->persist($article);
             $entityManager->flush();
+            // ancien edit image
+            // $imageName = $article->getImage();
+            // $imageName = substr($imageName, strrpos($imageName, '/') + 1);
+            // $image->move(
+            //     'assets/uploads/',
+            //     $imageName
+            // );
+            // $article->setImage('assets/uploads/' . $image->getClientOriginalName());
+
+            // $entityManager->flush();
 
             return $this->redirectToRoute('app_prive');
         }

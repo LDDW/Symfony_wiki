@@ -108,6 +108,7 @@ header {
 main {
     min-height: 100vh;
     .grid {
+        text-align: center;
         display: grid;
         // grid-template-columns: repeat(2, calc(50% - 10px));;
         gap: 20px;
@@ -155,7 +156,7 @@ main {
     }
 }
 
-.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+.example-wrapper {  margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
 .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 // ======================================== SECTION ======================================== //
 section {
@@ -245,9 +246,13 @@ form {
     padding: 15px;
     max-width: 600px;
     border: solid gray 1px;
-    border-radius: 15px;
+    border-radius: 15px;      
 }
 
+.alignementVertical {
+    display: flex;
+    align-items: center;
+}
 // ======================================== MES ARTICLES ======================================== //
 // ======================= ICON ======================= //
 
@@ -273,4 +278,11 @@ form {
   'wght' 200,
   'GRAD' 200,
   'opsz' 24
+}
+
+// ======================================== AJOUT ARTICLES ======================================== //
+textarea {
+    width: 300px;
+    height: 200px;
+    resize: none;
 }
