@@ -26,12 +26,6 @@ class NewArticleFormType extends AbstractType
             ->add('titre', TextType::class)
             ->add('informations', TextareaType::class)
             ->add('image', FileType::class, array('data_class' => null))
-            // ->add('categorie', EntityType::class, array(
-            //     'class' => Categorie::class,
-            //     'choice_label' => 'nom',
-            //     'placeholder' => 'Choisir une catégorie',
-
-            // ))
             ->add('save', SubmitType::class);
     }
 
