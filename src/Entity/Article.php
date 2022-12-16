@@ -32,9 +32,6 @@ class Article
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'article')]
     private Collection $categorie;
 
-    #[ORM\Column]
-    private ?int $auteur_id = null;
-
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -81,16 +78,9 @@ class Article
         return $this;
     }
 
-    public function getCategorie(): ?Categorie
+    public function getCategorie(): Collection
     {
         return $this->categorie;
-    }
-
-    public function setCategorie(?Categorie $categorie): self
-    {
-        $this->categorie = $categorie;
-
-        return $this;
     }
 
     public function getAuteur(): ?User
