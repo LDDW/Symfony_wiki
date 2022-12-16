@@ -13,17 +13,17 @@
    npm install
 ```
 
-2. Migrate Table
+2. Configure .env file for create DATABASE URL
+
+3. Create Database with SQL script 
+```sql
+   CREATE DATABASE symfony_wiki
+```
+
+4. Migrate Table
 ```sh
    php bin/console make:migration
    php bin/console doctrine:migrations:migrate
-```
-
-3. Configure .env file for create DATABASE URL
-
-4. Create Database with SQL script 
-```sql
-   CREATE DATABASE symfony_wiki
 ```
 
 5. Import Data into Database with SQL script
