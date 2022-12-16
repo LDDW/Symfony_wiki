@@ -27,7 +27,7 @@ class PriveController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $user = $this->security->getUser();
-        $articles = $user->getArticle();
+        $articles = $user->getArticle(); 
 
         return $this->render('prive/index.html.twig', [
             'articles' => $articles,
