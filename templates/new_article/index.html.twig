@@ -7,18 +7,30 @@
 {% endblock %}
 
 {% block body %}
-    <section>
-        <div class="grid">
-            {{ form_start(newArticleForm) }}
-            {{ form_errors(newArticleForm) }}
+    <div class="example-wrapper">
+        <section>
+            <div class="alignementVertical">
+                {{ form_start(newArticleForm) }}
+                {{ form_errors(newArticleForm) }}
 
-            {{ form_row(newArticleForm.titre) }}
-            {{ form_row(newArticleForm.informations) }}
-            {{ form_row(newArticleForm.image) }}
-            {# {{ form_row(newArticleForm.categorie) }} #}
-            {{ form_row(newArticleForm.save) }}
+                {{ form_row(newArticleForm.titre, {
+                    label: 'Titre : '
+                }) }}
+                <br>
+                {{ form_row(newArticleForm.informations, {
+                    label: 'Description : '
+                }) }}
+                <br>
+                {{ form_row(newArticleForm.image, {
+                    label: "Séléctionner l'image : "
+                }) }}
+                <br>
+                {{ form_row(newArticleForm.save, {
+                    label: 'Enregistrer : '
+                }) }}
 
-            {{ form_end(newArticleForm) }}
-        </div>
-    </section>
+                {{ form_end(newArticleForm) }}
+            </div>
+        </section>
+    </div>
 {% endblock %}

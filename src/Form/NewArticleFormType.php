@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Categorie;
 
 class NewArticleFormType extends AbstractType
 {
@@ -26,12 +28,11 @@ class NewArticleFormType extends AbstractType
             ->add('titre', TextType::class)
             ->add('informations', TextareaType::class)
             ->add('image', FileType::class, array('data_class' => null))
-            // ->add('categorie', EntityType::class, array(
-            //     'class' => Categorie::class,
-            //     'choice_label' => 'nom',
-            //     'placeholder' => 'Choisir une catégorie',
-
-            // ))
+            ->add('categorie', EntityType::class, [
+                'class' => Categorie::class,
+                'choice_label' => 'nom',
+                'multiple' => true,
+            ])
             ->add('save', SubmitType::class);
     }
 

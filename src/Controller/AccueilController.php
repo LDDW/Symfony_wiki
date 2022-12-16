@@ -12,9 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/", name="accueil")
-     *
+     * This function return 'accueil' page with 2 random articles and categories
+     * 
      * @param ManagerRegistry $doctrine
+     * @return Response
      */
     #[Route('/', name: 'app_accueil')]
     public function index(ManagerRegistry $doctrine): Response
