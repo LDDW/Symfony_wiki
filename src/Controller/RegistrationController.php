@@ -16,6 +16,8 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 class RegistrationController extends AbstractController
 {
     /**
+     * This function show register form
+     * 
      * @param Request $request
      * @param UserPasswordHasherInterface $userPasswordHasher
      * @param UserAuthenticatorInterface $userAuthenticator

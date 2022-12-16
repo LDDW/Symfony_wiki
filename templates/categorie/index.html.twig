@@ -22,8 +22,7 @@
         <tbody>
         {% for article in articles %}
             <tr>
-                <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}"
-                                                                         width="100"></a></th>
+                <th scope="row"><a href='/article/{{ article.id }}'><img src="{{ asset(article.image) }}" width="100"></a></th>
                 <td>{{ article.titre }}</td>
                 <td>{{ article.auteur.username }}</td>
                 <td class="information">{{ article.informations }}</td>
