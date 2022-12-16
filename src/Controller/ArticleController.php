@@ -101,7 +101,7 @@ class ArticleController extends AbstractController
             $imageName = $image->getClientOriginalName();
             $imageName = md5(uniqid()) . '.' . pathinfo($imageName, PATHINFO_EXTENSION);
             $image->move(
-                'assets/uploads',
+                'assets/uploads/',
                 $imageName
             );
             $article->setImage('assets/uploads/' . $imageName);
