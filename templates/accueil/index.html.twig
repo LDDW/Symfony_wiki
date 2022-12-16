@@ -30,7 +30,9 @@
             {% for article in articles %}
                 <a class="grid_item" href='{{ path('article_show', {'id': article.id}) }}'>
                     <h2>{{ article.titre }}</h2>
-                    <img src="{{ asset(article.image) }}" alt="" style=' width :200px'>
+                    <div class="image_accueil">
+                        <img src="{{ asset(article.image) }}" alt="" >
+                    </div>
                 </a>
             {% endfor %}
         </div>

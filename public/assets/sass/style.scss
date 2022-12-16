@@ -155,7 +155,7 @@ main {
 
             }
 
-            
+
             img {
                 z-index: -10;
                 width: 130%;
@@ -165,6 +165,10 @@ main {
                 transform: translate(-50%, -50%);
                 transition: all 0.3s ease-in-out;
 
+            }
+
+            .image_accueil::after {
+                width: 100%;
             }
 
             &:hover img {
