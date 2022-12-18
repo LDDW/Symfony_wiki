@@ -81,6 +81,3 @@ If css is empty on pages, use this command
 ```sh
     npm run sass
 ```
-## Connexion
-cyrilbizouarn5@gmail.com
-_Cyril
