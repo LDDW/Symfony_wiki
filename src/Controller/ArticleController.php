@@ -12,7 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 
 class ArticleController extends AbstractController
-{
+{   
+    /**
+     * @var Object
+     */
     private $security;
 
     public function __construct(Security $security)
@@ -23,8 +26,9 @@ class ArticleController extends AbstractController
     /**
      * This function show articles in article pages
      *
-     * @param $doctrine , $id
-     * @return :Response
+     * @param ManagerRegistry $doctrine
+     * @param int $id
+     * @return Response
      */
     #[Route('/article/{id}', name: 'article_show', requirements: ['id' => '\d+'], methods: ['GET'])]
     public function index(ManagerRegistry $doctrine, int $id): Response
@@ -43,8 +47,9 @@ class ArticleController extends AbstractController
     /**
      * This function delete article in article pages with current user
      *
-     * @param $doctrine , $id
-     * @return :Response
+     * @param ManagerRegistry $doctrine
+     * @param int $id
+     * @return Response
      */
     #[Route('/article/delete/{id}', name: 'article_delete', requirements: ['id' => '\d+'], methods: ['GET'])]
     public function delete(ManagerRegistry $doctrine, int $id): Response
@@ -75,8 +80,9 @@ class ArticleController extends AbstractController
     /**
      * This function create article in article pages with current user
      *
-     * @param $doctrine , $id
-     * @return :Response
+     * @param ManagerRegistry $doctrine
+     * @param int $id
+     * @return Response
      */
     #[Route('/article/new', name: 'app_new_article', methods: ['GET', 'POST'])]
     public function new(Request $request, ManagerRegistry $doctrine): Response
@@ -121,8 +127,9 @@ class ArticleController extends AbstractController
     /**
      * This function edit article in article pages with current user
      *
-     * @param $doctrine , $id
-     * @return :Response
+     * @param ManagerRegistry $doctrine
+     * @param int $id
+     * @return Response
      */
     #[Route('/article}/edit/{id}', name: 'article_edit', requirements: ['id' => '\d+'], methods: ['GET', 'POST'])]
     public function edit(Request $request, ManagerRegistry $doctrine, int $id): Response
@@ -163,16 +170,6 @@ class ArticleController extends AbstractController
             $article->setAuteur($user);
             $entityManager->persist($article);
             $entityManager->flush();
-            // ancien edit image
-            // $imageName = $article->getImage();
-            // $imageName = substr($imageName, strrpos($imageName, '/') + 1);
-            // $image->move(
-            //     'assets/uploads/',
-            //     $imageName
-            // );
-            // $article->setImage('assets/uploads/' . $image->getClientOriginalName());
-
-            // $entityManager->flush();
 
             return $this->redirectToRoute('app_prive');
         }

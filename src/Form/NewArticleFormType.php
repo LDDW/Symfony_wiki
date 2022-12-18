@@ -33,13 +33,6 @@ class NewArticleFormType extends AbstractType
                 'choice_label' => 'nom',
                 'multiple' => true,
             ])
-            
-            //                      (
-            //     'class' => Categorie::class,
-            //     'choice_label' => 'nom',
-            //     'placeholder' => 'Choisir une catégorie',
-
-            // ))
             ->add('save', SubmitType::class);
     }
 

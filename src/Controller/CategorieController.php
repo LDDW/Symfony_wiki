@@ -12,8 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategorieController extends AbstractController
 {
     /**
-     * @Route("/categorie/{id}", name="categorie_show", requirements={"id"="\d+"}, methods={"GET"})
-     *
+     * This function show list of categories
+     * 
      * @param ManagerRegistry $doctrine
      * @param int $id
      * @return Response
@@ -29,8 +29,8 @@ class CategorieController extends AbstractController
     }
 
     /**
-     * @Route("/categorie/{id}", name="categorie_show", requirements={"id"="\d+"}, methods={"GET"})
-     *
+     * This function show the articles of a category
+     * 
      * @param ManagerRegistry $doctrine
      * @param int $id
      * @return Response
@@ -39,7 +39,7 @@ class CategorieController extends AbstractController
     public function show_categorie(ManagerRegistry $doctrine, int $id_categorie): Response
     {
         $articles = $doctrine->getRepository(Categorie::class)->find($id_categorie)->getArticle();
-        $nombre = count($articles);
+        // $nombre = count($articles);
 
         return $this->render('categorie/index.html.twig', [
             'articles' => $articles

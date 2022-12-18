@@ -10,6 +10,8 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
+     * This function show login form
+     * 
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
@@ -30,6 +32,6 @@ class SecurityController extends AbstractController
     #[Route(path: '/deconnexion', name: 'app_logout')]
     public function logout(): void
     {
-
+        //
     }
 }
