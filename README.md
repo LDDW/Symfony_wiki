@@ -64,10 +64,14 @@ INSERT INTO `article` (`id`, `auteur_id`, `titre`, `image`, `informations`) VALU
     --
 
     INSERT INTO `article_categorie` (`article_id`, `categorie_id`) VALUES
+    (1, 1),
+    (2, 1),
     (3, 1),
     (4, 1),
     (5, 2),
-    (6, 2);
+    (6, 2),
+    (7, 2),
+    (8, 2);
 ```
 
 6. Launch project
